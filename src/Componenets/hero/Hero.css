@@ -1,0 +1,128 @@
+.hero_container {
+    margin-top: 20px;
+    width: 100%;
+    height: 523px;
+    background-color: #F2F0F1;
+    overflow: hidden;
+}
+
+.combine_hero {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.first_hero {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 6%;
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+.second_hero {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero_img {
+    width: 155%;
+    height: 130%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+.hero_h1 {
+    width: 577px;
+    margin: 0;
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 900;
+}
+.hero_p {
+    width: 545px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666;
+}
+.vector_1{
+    position: absolute;
+    width:56px ;
+    height: 56px;
+    top: 220px;
+    left: 165px;
+}
+.vector_2{
+    position: absolute;
+    top: 75px;
+    left: 580px;
+    width:104px ;
+    height: 104px;
+}
+@media(max-width:768px){
+    .combine_hero {
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
+    flex-direction: column;
+}
+.hero_container {
+    margin-top: 20px;
+    width: 100%;
+    height: 853px;
+    background-color: #F2F0F1;
+    overflow: hidden;
+}
+.hero_h1 {
+    width: 315px;
+    height: 93px;
+    margin: 20px;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 900;
+}
+.hero_p {
+    width: 358px;
+    height: 50px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666;
+}
+.second_hero {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+}
+.hero_img {
+    width: 660px;
+    height: 130%;
+    object-fit: contain;
+    object-position: center bottom ;
+}
+.vector_1{
+    position: absolute;
+    width:44px ;
+    height: 44px;
+    top: 130px;
+    left: 20px;
+}
+.vector_2{
+    position: absolute;
+    top: 25px;
+    left: 240px;
+    width:76px ;
+}
+}
