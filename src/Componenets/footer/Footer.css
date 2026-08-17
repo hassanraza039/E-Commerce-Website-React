@@ -1,0 +1,271 @@
+/* ================= FOOTER ================= */
+
+.footer {
+    margin-top: 70px;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 0 7%;
+    box-sizing: border-box;
+}
+
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 115px;
+    margin: -55px auto 0;
+    background-color: #000;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px 40px;
+    box-sizing: border-box;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.newsletter_text h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 30px;
+    margin: 0;
+}
+
+
+.newsletter_form {
+    width: 260px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.email_box {
+    width: 100%;
+    height: 30px;
+
+    background-color: white;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+
+.email_box span {
+    font-size: 14px;
+    color: #777;
+    margin-right: 8px;
+}
+
+
+.email_box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 10px;
+}
+
+
+.newsletter_form button {
+    width: 100%;
+    height: 30px;
+
+    border: none;
+    border-radius: 20px;
+
+    background-color: white;
+    color: black;
+
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+/* ================= FOOTER CONTENT ================= */
+
+.footer_content {
+    max-width: 1100px;
+    margin: 25px auto 0;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+
+/* ================= SHOP ================= */
+
+.footer_shop h2 {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0 0 12px;
+}
+
+
+.footer_shop p {
+    font-size: 10px;
+    line-height: 17px;
+    color: #777;
+    margin: 0;
+}
+
+
+/* ================= SOCIAL ICONS ================= */
+
+.social_icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+
+.social_icons span {
+    width: 18px;
+    height: 18px;
+
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* ================= COLUMNS ================= */
+
+.footer_column h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin: 0 0 15px;
+}
+
+
+.footer_column p {
+    font-size: 10px;
+    color: #777;
+    margin: 0 0 11px;
+}
+
+
+/* ================= BOTTOM ================= */
+
+.footer_bottom {
+    max-width: 1100px;
+    margin: 20px auto 0;
+
+    border-top: 1px solid #ddd;
+
+    padding: 12px 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.footer_bottom p {
+    color: #777;
+    font-size: 9px;
+    margin: 0;
+}
+
+
+.payment_methods {
+    display: flex;
+    gap: 6px;
+}
+
+
+.payment_methods div {
+    min-width: 38px;
+    height: 20px;
+
+    padding: 0 5px;
+
+    background-color: white;
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 7px;
+    font-weight: bold;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .footer {
+        padding: 0 20px;
+    }
+
+
+    .newsletter {
+        width: 100%;
+
+        margin-top: -35px;
+
+        padding: 25px 20px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .newsletter_text h1 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+
+
+    .newsletter_form {
+        width: 100%;
+    }
+
+
+    .footer_content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+
+    .footer_shop {
+        grid-column: 1 / 3;
+    }
+
+
+    .footer_bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+
+    .payment_methods {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

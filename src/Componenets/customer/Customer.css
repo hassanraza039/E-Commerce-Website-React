@@ -1,0 +1,156 @@
+.customer_container {
+    width: 100%;
+    margin: auto;
+    /* padding: 50px 20px; */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/* ================= HEADER ================= */
+
+.customer_header {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: auto;
+}
+
+
+.customer_header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+
+/* ================= ARROWS ================= */
+
+.customer_arrows {
+    display: flex;
+    gap: 12px;
+}
+
+
+.customer_arrows button {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 8px;
+}
+
+
+/* ================= SLIDER ================= */
+
+.customer_slider {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+
+/* ================= CARD ================= */
+
+.customer_card {
+    width: 336px;
+    height: 161px;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 18px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+
+.customer_stars {
+    color: #ffc107;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+
+.customer_name {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+
+.verified {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 13px;
+    height: 13px;
+
+    margin-left: 5px;
+
+    background-color: #00b341;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+}
+
+
+.customer_card p {
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 16px;
+
+    color: #777;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .customer_header h1 {
+        font-size: 28px;
+    }
+
+    .customer_card {
+        height: 155px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .customer_container {
+        padding: 35px 15px;
+    }
+
+    .customer_header h1 {
+        font-size: 22px;
+    }
+
+    .customer_arrows {
+        gap: 5px;
+    }
+
+    .customer_arrows button {
+        font-size: 20px;
+    }
+
+    .customer_card {
+        height: 160px;
+    }
+
+}
+.customer_h1{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+}

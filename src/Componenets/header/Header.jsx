@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import logo from './images/SHOP.CO.png';
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 const Header = () => {
@@ -21,8 +22,8 @@ const Header = () => {
       </div>
 
       <ul className={`header_list ${menuOpen ? 'show' : ''}`}>
-        <li>Shop</li>
-        <li>On Sale</li>
+        <li><Link to="/shop">Shop</Link></li>
+        <li><Link to="/">On sale</Link></li>
         <li>New Arrivals</li>
         <li>Brands</li>
       </ul>

@@ -1,0 +1,357 @@
+.filter {
+    width: 230px;
+    flex-shrink: 0;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+
+    padding: 18px;
+
+    background: white;
+
+    box-sizing: border-box;
+}
+
+
+/* ================= HEADER ================= */
+
+.filter_header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter_header h3 {
+    font-size: 16px;
+
+    margin: 0;
+
+    font-weight: 700;
+}
+
+.filter_header span {
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+/* ================= CATEGORIES ================= */
+
+.filter_categories {
+    margin-top: 18px;
+}
+
+.filter_categories p {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin: 12px 0;
+
+    cursor: pointer;
+}
+
+.filter_categories p:hover {
+    color: #000;
+}
+
+.filter_categories span {
+    font-size: 16px;
+}
+
+
+/* ================= HR ================= */
+
+.filter hr {
+    border: 0;
+
+    border-top: 1px solid #eeeeee;
+
+    margin: 16px 0;
+}
+
+
+/* ================= SECTION ================= */
+
+.filter_section {
+    margin-top: 10px;
+}
+
+
+/* ================= TITLE ================= */
+
+.filter_title {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter_title h4 {
+    margin: 0 0 15px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.filter_title span {
+    font-size: 14px;
+}
+
+
+/* ================= PRICE ================= */
+
+.price_slider {
+    position: relative;
+
+    height: 15px;
+
+    margin: 5px 10px;
+}
+
+.price_line {
+    position: absolute;
+
+    top: 6px;
+
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: #000;
+
+    border-radius: 5px;
+}
+
+.price_dot {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    background: #000;
+
+    border-radius: 50%;
+
+    top: 2px;
+}
+
+.price_dot.left {
+    left: 0;
+}
+
+.price_dot.right {
+    right: 0;
+}
+
+.price_values {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 10px;
+
+    color: #555;
+}
+
+
+/* ================= COLORS ================= */
+
+.colors {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 10px;
+}
+
+.filter_color {
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+
+/* COLORS */
+
+.green {
+    background: #00bd3f;
+}
+
+.red {
+    background: #f50000;
+}
+
+.yellow {
+    background: #ffd400;
+}
+
+.orange {
+    background: #ff7800;
+}
+
+.blue {
+    background: #08b5df;
+}
+
+.darkblue {
+    background: #2037ff;
+}
+
+.purple {
+    background: #7000ff;
+}
+
+.pink {
+    background: #ed008c;
+}
+
+.white {
+    background: white;
+
+    border: 1px solid #ddd;
+}
+
+.black {
+    background: #000;
+}
+
+
+/* ACTIVE COLOR */
+
+.active_color {
+    outline: 2px solid #000;
+
+    outline-offset: 2px;
+}
+
+
+/* ================= SIZE ================= */
+
+.sizes {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.sizes button {
+    border: 0;
+
+    background: #f2f2f2;
+
+    color: #777;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+.sizes button:hover {
+    background: #ddd;
+
+    color: #222;
+}
+
+.sizes .selected_filter_size {
+    background: #000;
+
+    color: white;
+}
+
+
+/* ================= DRESS STYLE ================= */
+
+.dress_style p {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 11px;
+
+    color: #777;
+
+    margin: 10px 0;
+
+    cursor: pointer;
+}
+
+.dress_style p:hover {
+    color: #000;
+}
+
+
+/* ================= APPLY BUTTON ================= */
+
+.apply_filter {
+    width: 100%;
+
+    height: 38px;
+
+    border: 0;
+
+    border-radius: 20px;
+
+    background: #000;
+
+    color: white;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.apply_filter:hover {
+    background: #222;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .filter {
+        width: 100%;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .filter {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .colors {
+        grid-template-columns: repeat(5, 22px);
+    }
+
+}

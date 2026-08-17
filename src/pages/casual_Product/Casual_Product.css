@@ -1,0 +1,50 @@
+.casual_page {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 50px;
+}
+
+
+/* BREADCRUMB */
+
+.casual_breadcrumb {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+
+    display: flex;
+    gap: 8px;
+
+    font-size: 11px;
+    color: #777;
+
+    margin-bottom: 15px;
+}
+
+.casual_breadcrumb b {
+    color: #aaa;
+}
+
+
+/* FILTER + PRODUCTS */
+
+.casual_content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .casual_content {
+        flex-direction: column;
+    }
+
+    .filter {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
