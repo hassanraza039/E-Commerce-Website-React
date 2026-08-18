@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Product.css'
+import './product.css'
 import Heading from '../heading/Heading'
 import { useNavigate } from 'react-router-dom'
 
