@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './Filter.css'
 
-const Filter = () => {
+const Filter = ({ onFilter }) => {
 
-    const [selectedSize, setSelectedSize] = useState("Large")
-    const [selectedColor, setSelectedColor] = useState("green")
+    const [selectedSize, setSelectedSize] = useState("")
+    const [selectedColor, setSelectedColor] = useState("")
+    const [selectedCategory, setSelectedCategory] = useState("")
+
 
     const colors = [
         "green",
@@ -19,6 +21,7 @@ const Filter = () => {
         "black"
     ]
 
+
     const sizes = [
         "XX-Small",
         "X-Small",
@@ -31,10 +34,39 @@ const Filter = () => {
         "4X-Large"
     ]
 
+
+    const categories = [
+        "T-shirts",
+        "Shorts",
+        "Shirts",
+        "Hoodie",
+        "Jeans"
+    ]
+
+
+    // =========================
+    // APPLY FILTER
+    // =========================
+
+    const applyFilter = () => {
+
+        onFilter({
+
+            size: selectedSize,
+            color: selectedColor,
+            category: selectedCategory,
+            maxPrice: 200
+
+        })
+
+    }
+
+
     return (
+
         <aside className="filter">
 
-            {/* FILTER HEADER */}
+            {/* HEADER */}
 
             <div className="filter_header">
 
@@ -49,30 +81,35 @@ const Filter = () => {
 
             <div className="filter_categories">
 
-                <p>
-                    T-shirts
-                    <span>›</span>
-                </p>
+                {categories.map(category => (
 
-                <p>
-                    Shorts
-                    <span>›</span>
-                </p>
+                    <p
+                        key={category}
+                        className={
+                            selectedCategory === category
+                                ? "category_active"
+                                : ""
+                        }
+                        onClick={() => {
 
-                <p>
-                    Shirts
-                    <span>›</span>
-                </p>
+                            if (
+                                selectedCategory === category
+                            ) {
+                                setSelectedCategory("")
+                            } else {
+                                setSelectedCategory(category)
+                            }
 
-                <p>
-                    Hoodie
-                    <span>›</span>
-                </p>
+                        }}
+                    >
 
-                <p>
-                    Jeans
-                    <span>›</span>
-                </p>
+                        {category}
+
+                        <span>›</span>
+
+                    </p>
+
+                ))}
 
             </div>
 
@@ -133,18 +170,30 @@ const Filter = () => {
 
                 <div className="colors">
 
-                    {colors.map((color) => (
+                    {colors.map(color => (
 
                         <span
                             key={color}
-                            className={`filter_color ${color} ${
-                                selectedColor === color
-                                    ? "active_color"
-                                    : ""
-                            }`}
-                            onClick={() =>
-                                setSelectedColor(color)
-                            }
+                            className={`
+                                filter_color
+                                ${color}
+                                ${
+                                    selectedColor === color
+                                        ? "active_color"
+                                        : ""
+                                }
+                            `}
+                            onClick={() => {
+
+                                if (
+                                    selectedColor === color
+                                ) {
+                                    setSelectedColor("")
+                                } else {
+                                    setSelectedColor(color)
+                                }
+
+                            }}
                         ></span>
 
                     ))}
@@ -172,7 +221,7 @@ const Filter = () => {
 
                 <div className="sizes">
 
-                    {sizes.map((size) => (
+                    {sizes.map(size => (
 
                         <button
                             key={size}
@@ -181,9 +230,17 @@ const Filter = () => {
                                     ? "selected_filter_size"
                                     : ""
                             }
-                            onClick={() =>
-                                setSelectedSize(size)
-                            }
+                            onClick={() => {
+
+                                if (
+                                    selectedSize === size
+                                ) {
+                                    setSelectedSize("")
+                                } else {
+                                    setSelectedSize(size)
+                                }
+
+                            }}
                         >
                             {size}
                         </button>
@@ -238,12 +295,13 @@ const Filter = () => {
             </div>
 
 
-            {/* APPLY FILTER */}
+            {/* APPLY */}
 
-            <button className="apply_filter">
-
+            <button
+                className="apply_filter"
+                onClick={applyFilter}
+            >
                 Apply Filter
-
             </button>
 
         </aside>

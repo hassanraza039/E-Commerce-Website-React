@@ -13,6 +13,7 @@ import Footer from './Componenets/footer/Footer'
 import Shop from './pages/shop/Shop'
 import ProductDetail from './Componenets/productdetail/ProductDetail'
 import Casual_Product from './pages/casual_Product/Casual_Product'
+import Cart from './pages/cart/Cart'
 import './App.css'
 
 
@@ -39,12 +40,32 @@ const App = () => {
 
             <Routes>
 
-                <Route path="/" element={<Home />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/casual" element={<Casual_Product/>} />
+    <Route
+        path="/"
+        element={<Home />}
+    />
 
+    <Route
+        path="/shop"
+        element={<Shop />}
+    />
 
-            </Routes>
+    <Route
+        path="/casual"
+        element={<Casual_Product />}
+    />
+
+    <Route
+        path="/product-detail"
+        element={<ProductDetail />}
+    />
+
+    <Route
+        path="/cart"
+        element={<Cart />}
+    />
+
+</Routes>
 
         </BrowserRouter>
     )

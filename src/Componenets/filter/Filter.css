@@ -1,148 +1,129 @@
 .filter {
-    width: 230px;
+    width: 190px;
     flex-shrink: 0;
 
-    border: 1px solid #e5e5e5;
-    border-radius: 14px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
 
-    padding: 18px;
-
-    background: white;
+    padding: 16px;
 
     box-sizing: border-box;
+
+    background: white;
 }
 
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 .filter_header {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 }
 
 .filter_header h3 {
-    font-size: 16px;
-
     margin: 0;
-
-    font-weight: 700;
+    font-size: 14px;
 }
 
 .filter_header span {
-    font-size: 18px;
-
-    cursor: pointer;
+    color: #888;
 }
 
 
-/* ================= CATEGORIES ================= */
+/* CATEGORIES */
 
 .filter_categories {
-    margin-top: 18px;
+    margin-top: 15px;
 }
 
-.filter_categories p {
+.filter_categories p,
+.dress_style p {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 
-    font-size: 12px;
+    margin: 0;
+    padding: 7px 0;
 
     color: #777;
 
-    margin: 12px 0;
+    font-size: 11px;
 
     cursor: pointer;
 }
 
-.filter_categories p:hover {
+.filter_categories p:hover,
+.dress_style p:hover {
     color: #000;
 }
 
-.filter_categories span {
-    font-size: 16px;
+.category_active {
+    color: #000 !important;
+    font-weight: bold;
 }
 
 
-/* ================= HR ================= */
+/* HR */
 
 .filter hr {
-    border: 0;
-
-    border-top: 1px solid #eeeeee;
-
-    margin: 16px 0;
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 13px 0;
 }
 
 
-/* ================= SECTION ================= */
+/* SECTION */
 
 .filter_section {
-    margin-top: 10px;
+    margin-top: 5px;
 }
-
-
-/* ================= TITLE ================= */
 
 .filter_title {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 }
 
 .filter_title h4 {
-    margin: 0 0 15px;
-
-    font-size: 13px;
-
-    font-weight: 700;
+    margin: 0;
+    font-size: 12px;
 }
 
 .filter_title span {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 
-/* ================= PRICE ================= */
+/* PRICE */
 
 .price_slider {
     position: relative;
-
-    height: 15px;
-
-    margin: 5px 10px;
+    height: 20px;
+    margin-top: 12px;
 }
 
 .price_line {
     position: absolute;
+    top: 8px;
+    left: 4px;
+    right: 4px;
 
-    top: 6px;
-
-    left: 0;
-    right: 0;
-
-    height: 4px;
-
+    height: 3px;
     background: #000;
-
-    border-radius: 5px;
 }
 
 .price_dot {
     position: absolute;
 
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
 
     background: #000;
 
     border-radius: 50%;
 
-    top: 2px;
+    top: 4px;
 }
 
 .price_dot.left {
@@ -153,81 +134,77 @@
     right: 0;
 }
 
+
 .price_values {
     display: flex;
-
     justify-content: space-between;
 
-    font-size: 10px;
-
-    color: #555;
+    font-size: 9px;
 }
 
 
-/* ================= COLORS ================= */
+/* COLORS */
 
 .colors {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 
-    grid-template-columns: repeat(5, 1fr);
-
-    gap: 10px;
+    margin-top: 12px;
 }
 
 .filter_color {
-    width: 22px;
-    height: 22px;
+    width: 19px;
+    height: 19px;
 
     border-radius: 50%;
 
-    cursor: pointer;
+    border: 1px solid #ddd;
 
-    box-sizing: border-box;
+    cursor: pointer;
 }
 
 
 /* COLORS */
 
 .green {
-    background: #00bd3f;
+    background: #12c63b;
 }
 
 .red {
-    background: #f50000;
+    background: #f20d25;
 }
 
 .yellow {
-    background: #ffd400;
+    background: #ffd51c;
 }
 
 .orange {
-    background: #ff7800;
+    background: #ff8700;
 }
 
 .blue {
-    background: #08b5df;
+    background: #16b9e8;
 }
 
 .darkblue {
-    background: #2037ff;
+    background: #1649ff;
 }
 
 .purple {
-    background: #7000ff;
+    background: #7615ed;
 }
 
 .pink {
-    background: #ed008c;
+    background: #ef0a9d;
 }
 
 .white {
     background: white;
-
-    border: 1px solid #ddd;
 }
 
 .black {
-    background: #000;
+    background: #050505;
 }
 
 
@@ -235,31 +212,30 @@
 
 .active_color {
     outline: 2px solid #000;
-
     outline-offset: 2px;
 }
 
 
-/* ================= SIZE ================= */
+/* SIZE */
 
 .sizes {
     display: flex;
-
     flex-wrap: wrap;
+    gap: 6px;
 
-    gap: 7px;
+    margin-top: 10px;
 }
 
 .sizes button {
-    border: 0;
+    border: none;
 
-    background: #f2f2f2;
+    background: #f1f1f1;
 
-    color: #777;
+    color: #888;
 
-    padding: 8px 12px;
+    border-radius: 15px;
 
-    border-radius: 20px;
+    padding: 6px 9px;
 
     font-size: 9px;
 
@@ -268,56 +244,36 @@
 
 .sizes button:hover {
     background: #ddd;
-
-    color: #222;
 }
 
 .sizes .selected_filter_size {
     background: #000;
-
     color: white;
 }
 
 
-/* ================= DRESS STYLE ================= */
+/* DRESS STYLE */
 
-.dress_style p {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    font-size: 11px;
-
-    color: #777;
-
-    margin: 10px 0;
-
-    cursor: pointer;
-}
-
-.dress_style p:hover {
-    color: #000;
+.dress_style {
+    margin-top: 7px;
 }
 
 
-/* ================= APPLY BUTTON ================= */
+/* APPLY */
 
 .apply_filter {
     width: 100%;
 
-    height: 38px;
+    border: none;
 
-    border: 0;
+    background: #000;
+    color: white;
 
     border-radius: 20px;
 
-    background: #000;
+    padding: 10px;
 
-    color: white;
-
-    font-size: 11px;
+    font-size: 10px;
 
     cursor: pointer;
 
@@ -325,33 +281,16 @@
 }
 
 .apply_filter:hover {
-    background: #222;
+    opacity: 0.85;
 }
 
 
-/* ================= TABLET ================= */
+/* MOBILE */
 
 @media (max-width: 900px) {
 
     .filter {
         width: 100%;
-    }
-
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 600px) {
-
-    .filter {
-        width: 100%;
-
-        padding: 15px;
-    }
-
-    .colors {
-        grid-template-columns: repeat(5, 22px);
     }
 
 }

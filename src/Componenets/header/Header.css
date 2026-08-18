@@ -1,4 +1,4 @@
-.Header_container{
+.Header_container {
     width: 1200px;
     margin: auto;
     display: flex;
@@ -11,12 +11,20 @@
 .bar{
     visibility: hidden;
 }
-.header_list{
+.header_list {
     width: 321px;
-    height: 22px;
     display: flex;
     justify-content: space-evenly;
-    
+}
+/* Link ka blue/purple color aur underline remove */
+.header_list li a {
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+}
+.header_list li a:hover {
+    text-decoration: none;
+    color: #000;
 }
 li{
     list-style: none;
@@ -157,4 +165,33 @@ li:hover{
     .search_logo2{
         visibility: visible;
     }
+}
+.cart_icon {
+    position: relative;
+    cursor: pointer;
+}
+
+
+.cart_count {
+    position: absolute;
+
+    top: -9px;
+    right: -9px;
+
+    min-width: 16px;
+    height: 16px;
+
+    padding: 0 4px;
+
+    background: red;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

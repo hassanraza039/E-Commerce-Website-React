@@ -1,38 +1,133 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Casual.css'
+import { useNavigate } from 'react-router-dom'
 import Product_list from '../product/productData'
 
-const Casual = () => {
+const Casual = ({ filters = {} }) => {
+
+    const navigate = useNavigate()
 
     const [currentPage, setCurrentPage] = useState(1)
 
-    // Har page par 6 products
     const productsPerPage = 9
 
-    // Casual category ke products
-    const casualProducts = Product_list.filter(
-        product =>
-            product.category === "T-shirts" ||
-            product.category === "Shirts" ||
-            product.category === "Jeans" ||
-            product.category === "Shorts"
+
+    // =========================
+    // CASUAL PRODUCTS
+    // =========================
+
+    let casualProducts = Product_list.filter(product =>
+        [
+            "T-shirts",
+            "Shirts",
+            "Jeans",
+            "Shorts",
+            "Hoodie"
+        ].includes(product.category)
     )
 
-    // Total pages
+
+    // =========================
+    // CATEGORY FILTER
+    // =========================
+
+    if (filters.category) {
+
+        casualProducts = casualProducts.filter(product =>
+            product.category?.toLowerCase() ===
+            filters.category.toLowerCase()
+        )
+
+    }
+
+
+    // =========================
+    // COLOR FILTER
+    // =========================
+
+    if (filters.color) {
+
+        casualProducts = casualProducts.filter(product =>
+            product.color?.toLowerCase() ===
+            filters.color.toLowerCase()
+        )
+
+    }
+
+
+    // =========================
+    // SIZE FILTER
+    // =========================
+
+    if (filters.size) {
+
+        casualProducts = casualProducts.filter(product =>
+            product.size?.toLowerCase() ===
+            filters.size.toLowerCase()
+        )
+
+    }
+
+
+    // =========================
+    // PRICE FILTER
+    // =========================
+
+    if (filters.maxPrice) {
+
+        casualProducts = casualProducts.filter(product => {
+
+            const price = Number(
+                String(product.price)
+                    .replace('$', '')
+                    .replace(',', '')
+            )
+
+            return price <= filters.maxPrice
+
+        })
+
+    }
+
+
+    // =========================
+    // PAGINATION
+    // =========================
+
     const totalPages = Math.ceil(
         casualProducts.length / productsPerPage
     )
 
-    // Current page ke products
     const startIndex =
         (currentPage - 1) * productsPerPage
 
-    const currentProducts = casualProducts.slice(
-        startIndex,
-        startIndex + productsPerPage
-    )
+    const currentProducts =
+        casualProducts.slice(
+            startIndex,
+            startIndex + productsPerPage
+        )
 
-    // Page click
+
+    // =========================
+    // FILTER CHANGE
+    // =========================
+
+    useEffect(() => {
+
+        setCurrentPage(1)
+
+    }, [
+        filters.category,
+        filters.color,
+        filters.size,
+        filters.maxPrice
+    ])
+
+
+    // =========================
+    // PAGE CHANGE
+    // =========================
+
     const handlePageChange = (page) => {
 
         setCurrentPage(page)
@@ -41,48 +136,74 @@ const Casual = () => {
             top: 0,
             behavior: "smooth"
         })
+
     }
 
-    // Previous
-    const handlePrevious = () => {
 
-        if (currentPage > 1) {
-            handlePageChange(currentPage - 1)
-        }
+    // =========================
+    // OPEN PRODUCT DETAIL
+    // =========================
+
+    const openProduct = (product) => {
+
+        navigate('/product-detail', {
+            state: {
+                product: product
+            }
+        })
+
     }
 
-    // Next
-    const handleNext = () => {
-
-        if (currentPage < totalPages) {
-            handlePageChange(currentPage + 1)
-        }
-    }
 
     return (
 
         <main className="casual_products">
 
-            {/* TOP */}
+
+            {/* ================= TOP ================= */}
 
             <div className="casual_top">
 
-                <h1>Casual</h1>
+                <h1>
+                    Casual
+                </h1>
+
 
                 <div className="casual_sort">
 
                     <span>
-                        Showing {startIndex + 1}-
+
+                        Showing{" "}
+
+                        {casualProducts.length === 0
+                            ? 0
+                            : startIndex + 1
+                        }
+
+                        -
+
                         {Math.min(
                             startIndex + productsPerPage,
                             casualProducts.length
                         )}
-                        {' '}of {casualProducts.length} Products
+
+                        {" "}of{" "}
+
+                        {casualProducts.length}
+
+                        {" "}Products
+
                     </span>
 
+
                     <span>
+
                         Sort by:
-                        <b> Most Popular⌄</b>
+
+                        <b>
+                            {" "}Most Popular⌄
+                        </b>
+
                     </span>
 
                 </div>
@@ -90,120 +211,174 @@ const Casual = () => {
             </div>
 
 
-            {/* PRODUCTS */}
+            {/* ================= PRODUCTS ================= */}
 
-            <div className="casual_grid">
+            {currentProducts.length === 0 ? (
 
-                {currentProducts.map((product, index) => (
+                <div className="no_products">
 
-                    <div
-                        className="casual_card"
-                        key={index}
-                    >
+                    <h2>
+                        No Products Found
+                    </h2>
 
-                        <img
-                            src={product.image}
-                            alt={product.name}
-                        />
+                    <p>
+                        Try another filter.
+                    </p>
 
-                        <h3>
-                            {product.name}
-                        </h3>
+                </div>
 
-                        <div className="casual_rating">
+            ) : (
 
-                            <span>
-                                ★★★★★
-                            </span>
+                <div className="casual_grid">
 
-                            <small>
-                                {product.rating}
-                            </small>
+                    {currentProducts.map((product, index) => (
 
-                        </div>
-
-                        <div className="casual_price">
-
-                            <b>
-                                {product.price}
-                            </b>
-
-                            {product.cut_price && (
-                                <del>
-                                    {product.cut_price}
-                                </del>
-                            )}
-
-                            {product.discount && (
-                                <span>
-                                    {product.discount}
-                                </span>
-                            )}
-
-                        </div>
-
-                    </div>
-
-                ))}
-
-            </div>
-
-
-            {/* PAGINATION */}
-
-            <div className="pagination">
-
-                {/* PREVIOUS */}
-
-                <button
-                    onClick={handlePrevious}
-                    disabled={currentPage === 1}
-                >
-                    ← Previous
-                </button>
-
-
-                {/* PAGE NUMBERS */}
-
-                <div className="page_numbers">
-
-                    {Array.from(
-                        { length: totalPages },
-                        (_, index) => index + 1
-                    ).map((page) => (
-
-                        <span
-                            key={page}
-                            className={
-                                currentPage === page
-                                    ? "active_page"
-                                    : ""
-                            }
+                        <div
+                            className="casual_card"
+                            key={product.id || index}
                             onClick={() =>
-                                handlePageChange(page)
+                                openProduct(product)
                             }
                         >
-                            {page}
-                        </span>
+
+
+                            {/* IMAGE */}
+
+                            <div className="casual_image">
+
+                                <img
+                                    src={product.image}
+                                    alt={product.name}
+                                />
+
+                            </div>
+
+
+                            {/* PRODUCT NAME */}
+
+                            <h3>
+                                {product.name}
+                            </h3>
+
+
+                            {/* RATING */}
+
+                            <div className="casual_rating">
+
+                                <span>
+                                    ★★★★★
+                                </span>
+
+                                <small>
+                                    {product.rating || "4.5/5"}
+                                </small>
+
+                            </div>
+
+
+                            {/* PRICE */}
+
+                            <div className="casual_price">
+
+                                <b>
+                                    {product.price}
+                                </b>
+
+
+                                {product.cut_price && (
+
+                                    <del>
+                                        {product.cut_price}
+                                    </del>
+
+                                )}
+
+
+                                {product.discount && (
+
+                                    <span className="discount">
+                                        {product.discount}
+                                    </span>
+
+                                )}
+
+                            </div>
+
+                        </div>
 
                     ))}
 
                 </div>
 
+            )}
 
-                {/* NEXT */}
 
-                <button
-                    onClick={handleNext}
-                    disabled={currentPage === totalPages}
-                >
-                    Next →
-                </button>
+            {/* ================= PAGINATION ================= */}
 
-            </div>
+            {totalPages > 1 && (
+
+                <div className="pagination">
+
+
+                    <button
+                        disabled={currentPage === 1}
+                        onClick={() =>
+                            handlePageChange(
+                                currentPage - 1
+                            )
+                        }
+                    >
+                        ← Previous
+                    </button>
+
+
+                    <div className="page_numbers">
+
+                        {Array.from(
+                            { length: totalPages },
+                            (_, index) => index + 1
+                        ).map(page => (
+
+                            <button
+                                key={page}
+                                className={
+                                    currentPage === page
+                                        ? "active_page"
+                                        : ""
+                                }
+                                onClick={() =>
+                                    handlePageChange(page)
+                                }
+                            >
+                                {page}
+                            </button>
+
+                        ))}
+
+                    </div>
+
+
+                    <button
+                        disabled={
+                            currentPage === totalPages
+                        }
+                        onClick={() =>
+                            handlePageChange(
+                                currentPage + 1
+                            )
+                        }
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            )}
 
         </main>
+
     )
+
 }
 
 export default Casual

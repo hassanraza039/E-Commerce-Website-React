@@ -1,25 +1,196 @@
-/* PAGINATION */
+.casual_products {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+}
+
+
+/* =========================
+   TOP
+========================= */
+
+.casual_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    gap: 15px;
+}
+
+.casual_top h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+.casual_sort {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 11px;
+    color: #777;
+}
+
+.casual_sort b {
+    color: #111;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.casual_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px 15px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.casual_card {
+    cursor: pointer;
+    min-width: 0;
+    transition: transform 0.2s ease;
+}
+
+.casual_card:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.casual_image {
+    width: 100%;
+    height: 180px;
+
+    background: #f2f0f0;
+
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.casual_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================
+   PRODUCT NAME
+========================= */
+
+.casual_card h3 {
+    margin: 8px 0 3px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+.casual_rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.casual_rating span {
+    color: #ffc107;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.casual_rating small {
+    font-size: 10px;
+    color: #555;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.casual_price {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.casual_price b {
+    font-size: 15px;
+    color: #111;
+}
+
+.casual_price del {
+    color: #999;
+    font-size: 13px;
+}
+
+.discount {
+    background: #ffe6e6;
+    color: #ff3333;
+    padding: 3px 7px;
+    border-radius: 15px;
+    font-size: 9px;
+}
+
+
+/* =========================
+   PAGINATION
+========================= */
 
 .pagination {
     border-top: 1px solid #eee;
+
     margin-top: 30px;
     padding-top: 15px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    gap: 10px;
 }
 
-.pagination button {
-    border: 1px solid #eee;
+.pagination > button {
+    border: 1px solid #ddd;
     background: white;
-    border-radius: 7px;
-    padding: 8px 14px;
-    font-size: 10px;
+
+    padding: 8px 13px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
     cursor: pointer;
+
+    white-space: nowrap;
 }
 
-.pagination button:hover {
+.pagination > button:hover:not(:disabled) {
     background: #f5f5f5;
 }
 
@@ -28,35 +199,348 @@
     cursor: not-allowed;
 }
 
+
 .page_numbers {
     display: flex;
-    gap: 15px;
     align-items: center;
+    gap: 4px;
+
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.page_numbers span {
-    font-size: 10px;
-    cursor: pointer;
-    min-width: 25px;
-    height: 25px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.page_numbers button {
+    border: none;
+    background: white;
+
+    width: 28px;
+    height: 28px;
 
     border-radius: 6px;
+
+    font-size: 11px;
+
+    cursor: pointer;
 }
 
-.page_numbers span:hover {
+.page_numbers button:hover {
     background: #f2f2f2;
 }
+
 
 .page_numbers .active_page {
-    background: #f2f2f2;
+    background: #f0f0f0;
     font-weight: bold;
 }
-.casual_grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px 12px;
+
+
+/* =========================
+   NO PRODUCTS
+========================= */
+
+.no_products {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.no_products h2 {
+    margin-bottom: 5px;
+}
+
+.no_products p {
+    color: #777;
+}
+
+
+/* ==================================================
+   TABLET
+   901px - 1200px
+================================================== */
+
+@media (max-width: 1200px) {
+
+    .casual_grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .casual_image {
+        height: 160px;
+    }
+
+}
+
+
+/* ==================================================
+   TABLET
+   601px - 900px
+================================================== */
+
+@media (max-width: 900px) {
+
+    .casual_top {
+        align-items: flex-start;
+    }
+
+    .casual_top h1 {
+        font-size: 25px;
+    }
+
+    .casual_sort {
+        gap: 12px;
+    }
+
+    .casual_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 12px;
+    }
+
+    .casual_image {
+        height: 180px;
+    }
+
+    .casual_card h3 {
+        font-size: 13px;
+    }
+
+    .casual_price b {
+        font-size: 14px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   481px - 600px
+================================================== */
+
+@media (max-width: 600px) {
+
+    .casual_products {
+        width: 100%;
+    }
+
+
+    .casual_top {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .casual_top h1 {
+        font-size: 24px;
+    }
+
+
+    .casual_sort {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+
+        gap: 8px;
+
+        font-size: 10px;
+    }
+
+
+    .casual_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px 10px;
+    }
+
+
+    .casual_image {
+        height: 150px;
+        border-radius: 10px;
+    }
+
+
+    .casual_card h3 {
+        font-size: 12px;
+        margin-top: 7px;
+    }
+
+
+    .casual_rating {
+        gap: 4px;
+    }
+
+
+    .casual_rating span {
+        font-size: 11px;
+        letter-spacing: 0;
+    }
+
+
+    .casual_rating small {
+        font-size: 9px;
+    }
+
+
+    .casual_price {
+        gap: 5px;
+    }
+
+
+    .casual_price b {
+        font-size: 13px;
+    }
+
+
+    .casual_price del {
+        font-size: 11px;
+    }
+
+
+    .discount {
+        font-size: 8px;
+        padding: 2px 5px;
+    }
+
+
+    /* PAGINATION */
+
+    .pagination {
+        margin-top: 25px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .pagination > button {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+
+
+    .page_numbers {
+        order: 3;
+        width: 100%;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+   400px - 480px
+================================================== */
+
+@media (max-width: 480px) {
+
+    .casual_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 18px 8px;
+    }
+
+
+    .casual_image {
+        height: 135px;
+    }
+
+
+    .casual_card h3 {
+        font-size: 11px;
+    }
+
+
+    .casual_rating span {
+        font-size: 10px;
+    }
+
+
+    .casual_rating small {
+        font-size: 8px;
+    }
+
+
+    .casual_price b {
+        font-size: 12px;
+    }
+
+
+    .casual_price del {
+        font-size: 10px;
+    }
+
+
+    .casual_sort {
+        font-size: 9px;
+    }
+
+
+    .pagination {
+        gap: 6px;
+    }
+
+}
+
+
+/* ==================================================
+   VERY SMALL MOBILE
+   Below 400px
+================================================== */
+
+@media (max-width: 399px) {
+
+    .casual_grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+
+    .casual_image {
+        height: 220px;
+    }
+
+
+    .casual_card h3 {
+        font-size: 13px;
+    }
+
+
+    .casual_rating span {
+        font-size: 13px;
+    }
+
+
+    .casual_rating small {
+        font-size: 10px;
+    }
+
+
+    .casual_price b {
+        font-size: 15px;
+    }
+
+
+    .casual_price del {
+        font-size: 13px;
+    }
+
+
+    .casual_sort {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 5px;
+    }
+
+
+    .pagination > button {
+        font-size: 10px;
+        padding: 7px 9px;
+    }
+
 }

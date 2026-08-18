@@ -48,3 +48,11 @@
     }
 
 }
+.casual_breadcrumb a {
+    color: #777;
+    text-decoration: none;
+}
+
+.casual_breadcrumb a:hover {
+    color: #000;
+}
