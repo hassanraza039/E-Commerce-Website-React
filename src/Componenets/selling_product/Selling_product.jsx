@@ -2,10 +2,10 @@ import React from 'react'
 import Product from '../product/Product'
 import './Selling_product.css'
 
-import S_1 from '../Selling_product/images/S_1.png'
-import S_2 from '../Selling_product/images/S_2.png'
-import S_3 from '../Selling_product/images/S_3.png'
-import S_4 from '../Selling_product/images/S_4.png'
+import S_1 from '../selling_product/images/S_1.png'
+import S_2 from '../selling_product/images/S_2.png'
+import S_3 from '../selling_product/images/S_3.png'
+import S_4 from '../selling_product/images/S_4.png'
 
 const Selling_product = () => {
 
