@@ -1,7 +1,7 @@
-import P_1 from './images/P_1.png'
-import P_2 from './images/P_2.png'
-import P_3 from './images/P_3.png'
-import P_4 from './images/P_4.png'
+import P_1 from './images/p_1.png'
+import P_2 from './images/p_2.png'
+import P_3 from './images/p_3.png'
+import P_4 from './images/p_4.png'
 
 const Product_list = [
     {
